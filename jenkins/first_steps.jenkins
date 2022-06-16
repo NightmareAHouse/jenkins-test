@@ -1,17 +1,13 @@
 #!groovy
-
 properties([disableConcurrentBuilds()])
-
 pipeline {
     agent{
         label 'master'
     }
-
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-
     stages {
         stage("Build frontend") {
             steps{
@@ -19,7 +15,6 @@ pipeline {
                 npm run build
             }
         }
-
         stage("Test frontend"){
             npm install
             npm run test
