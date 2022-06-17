@@ -4,11 +4,16 @@ pipeline {
     tools {nodejs "node"}
 
     stages {
-        stage('Install') {
+        stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/NightmareAHouse/jenkins-test.git'
                 bat 'npm install'
             }
+        }
+
+        stage('Test') {
+            git branch: 'main', url: 'https://github.com/NightmareAHouse/jenkins-test.git'
+            bat 'npm run test'
         }
     }
 }
