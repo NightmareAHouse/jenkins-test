@@ -1,10 +1,20 @@
 pipeline {
     agent any
 
+    tools {nodejs "node"}
+
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                git branch: 'main', url: 'https://github.com/NightmareAHouse/jenkins-test.git'
+                bat 'npm install'
+            }
+        }
+
+        stage("Test"){
+            steps{
+                bat 'npm install'
+                bat 'npm run test'
             }
         }
     }
