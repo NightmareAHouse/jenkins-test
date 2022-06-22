@@ -15,6 +15,12 @@ pipeline {
       }
     }
 
+    stage('Push') {
+      steps {
+        echo 'Pipeline end'
+      }
+    }
+
   }
   tools {
     nodejs 'node'
