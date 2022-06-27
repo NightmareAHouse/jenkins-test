@@ -22,7 +22,6 @@ pipeline {
     }
   }
 
-  }
   tools {
     nodejs 'node'
   }
