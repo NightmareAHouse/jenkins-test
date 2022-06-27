@@ -20,8 +20,8 @@ pipeline {
         echo 'Pipeline end'
       }
     }
-
   }
+
   tools {
     nodejs 'node'
   }
