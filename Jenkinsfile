@@ -20,6 +20,7 @@ pipeline {
         echo 'Pipeline end'
       }
     }
+  }
 
   }
   tools {
