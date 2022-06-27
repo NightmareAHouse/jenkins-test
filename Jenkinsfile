@@ -4,20 +4,20 @@ pipeline {
       stage('Build') {
         steps {
           git(branch: 'main', url: 'https://github.com/NightmareAHouse/jenkins-test.git')
-          bat 'npm install'
+          sh 'bat 'npm install''
         }
       }
 
       stage('Test') {
         steps {
-          bat 'npm install'
-          bat 'npm run test'
+          sh 'bat 'npm install''
+          sh 'bat 'npm run test''
         }
       }
 
       stage('Push') {
         steps {
-          echo 'Pipeline end'
+          sh 'echo 'Pipeline end''
         }
       }
     }
