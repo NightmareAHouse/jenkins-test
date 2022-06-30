@@ -20,7 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "start-test start http://0.0.0.0:3000 cy:run",
-    "cy:run": "set NO_COLOR=1 && cypress run",
+    "cy:run": "set NO_COLOR=1 && node_modules/.bin/cypress run",
     "cy:open": "npx cypress open",
     "eject": "react-scripts eject"
   },
